@@ -6,15 +6,23 @@
 </head>
 <body>
 	<div id="box">
-		{{msg}}
+		{{msg}}<br>
+		<p v-text="img">111</p><!-- 直接文本输出 -->
+		<p v-html="img">111</p><!-- 转换为html -->
+		<input type="" name="" v-model="msg"><!-- 绑定一个数据 -->
+		<p v-if="bool">1111111</p><!-- if判断 -->
+		<input type="" name="" v-model="bool">
 	</div>
 </body>
 </html>
 <script type="text/javascript">
+	var data = {
+			msg:'hello worlld',
+			img:'<h1>我是一张图片</h1>',
+			bool:true
+		}
 	var vue = new Vue({
 		el:'#box',
-		data:{
-			msg:'hello worlld'
-		}
+		data:data
 	})
 </script>
